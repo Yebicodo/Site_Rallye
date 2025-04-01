@@ -1,4 +1,3 @@
-// script.js
 
 var dateEvenement = new Date("April 5, 2025 00:00:00").getTime();
 
@@ -27,3 +26,19 @@ const navLinks = document.querySelector('.nav-links');
 menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
+
+// Marque le lien actif automatiquement de l'URL
+document.addEventListener("DOMContentLoaded", function () {
+    const currentPage = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll(".nav-links a");
+  
+    navLinks.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href === currentPage) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  });
+  

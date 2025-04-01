@@ -303,6 +303,26 @@ p {
 }
 
 /* Gallery */
+.banniere-titre {
+    background-image: url("img galerie/img-acc.jpg"); /* change le chemin selon ton image */
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.banniere-titre h1 {
+    color: white;
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.4); /* optionnel : assombrit derrière le texte */
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+  
 .gallery {
     background-color: #f1faee;
     width: 100%;
