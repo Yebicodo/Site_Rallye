@@ -1,6 +1,8 @@
 <?php
 // Connexion à la base de données
-require_once 'config.php'; // Ce fichier contient l'objet $pdo
+require_once 'config.php';  // Ce fichier contient l'objet $pdo
+include '../header.php';      // Remonter au bon endroit
+
 
 // Requête pour récupérer les actualités
 $sql = "SELECT * FROM actualites ORDER BY date_publication DESC";
@@ -14,10 +16,9 @@ $actualites = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Actualités</title>
-  <link rel="stylesheet" href="actualites.css"> <!-- ton fichier CSS personnalisé -->
+  <link rel="stylesheet" href="../style.css"> <!-- ton fichier CSS personnalisé -->
 </head>
 <body>
-
   <h1>Actualités</h1>
 
   <section class="actualites">
@@ -40,6 +41,7 @@ $actualites = $stmt->fetchAll(PDO::FETCH_ASSOC);
       </article>
     <?php endforeach; ?>
   </section>
+  <?php include '../footer.php'; ?>
 
 </body>
 </html>
