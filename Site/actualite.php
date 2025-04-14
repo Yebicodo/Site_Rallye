@@ -1,7 +1,7 @@
 <?php include 'includes/header.php'; ?>
 <?php 
 // Connexion à la base de données
-require_once '../Configuration/Database/config.php';  // Ce fichier contient l'objet $pdo
+require_once '../Configuration/Database/config.php'; 
 
 // Requête pour récupérer les actualités
 $sql = "SELECT * FROM actualites ORDER BY date_publication DESC";
@@ -10,6 +10,16 @@ $actualites = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <h1>Actualités</h1>
+
+<!-- Actualité en vedette -->
+<section class="actualite-en-vedette">
+<img src="../Contenus/Image/Img_de_galerie (5).jpg" alt="Image à la une du Rallye">
+</section>
+
+<!-- Compte à rebours -->
+<div id="compte-a-rebours">
+    <p>Prochain événement dans <span id="temps"></span></p>
+</div>
 
 <section class="actualites">
   <?php foreach ($actualites as $actu): ?>
@@ -34,7 +44,7 @@ $actualites = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <?php include 'includes/footer.php'; ?>
 
-<!-- Script JS du site -->
+<!-- Script JS du compte à rebours + nav -->
 <script src="javascript/script.js"></script>
 </body>
 </html>

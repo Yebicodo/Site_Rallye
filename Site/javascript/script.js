@@ -1,4 +1,4 @@
-var dateEvenement = new Date("April 5, 2025 00:00:00").getTime();
+var dateEvenement = new Date("November 5, 2025 00:00:00").getTime();
 
 var x = setInterval(function() {
   var maintenant = new Date().getTime();
