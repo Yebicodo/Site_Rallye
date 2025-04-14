@@ -1,27 +1,36 @@
-/* Image en vedette */
+
+
+/* Image vedette */
 .actualite-en-vedette {
-    background-color: #ffffff;
-    border-radius: 1.5rem;
+    width: 100vw; /* toute la largeur de l'écran */
+    height: 400px; /* fixe la hauteur de la bannière */
     overflow: hidden;
-    margin: 2rem auto;
-    max-width: 1200px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     position: relative;
-  }
-  
-  .actualite-en-vedette img {
+}
+
+.actualite-en-vedette img {
     width: 100%;
-    height: 500px;
-    object-fit: cover;
-    transition: transform var(--transition-speed);
-  }
-  
-  .actualite-en-vedette:hover img {
-    transform: scale(1.02);
-  }
-  
-  /* Compte à rebours */
-  #compte-a-rebours {
+    height: 100%;
+    object-fit: cover; /* 🔥 remplissage sans déformation */
+    object-position: center; /* centré joliment */
+    display: block;
+}
+
+
+
+/* Titre de la page */
+.titre-actualites {
+    text-align: center;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--accent-color); /* Garde ta couleur */
+    margin: 2rem 0 3rem 0;
+    /* font-weight: 800; */
+    letter-spacing: -0.5px;
+    text-shadow: 2px 2px 4px rgba(230, 57, 70, 0.1);
+}
+
+/* Compte à rebours */
+#compte-a-rebours {
     text-align: center;
     margin: 2.5rem auto;
     padding: 1.5rem 2.5rem;
@@ -32,154 +41,153 @@
     box-shadow: 0 8px 20px rgba(29, 53, 87, 0.2);
     backdrop-filter: blur(10px);
     max-width: 90%;
-  }
-  
-  #compte-a-rebours p {
+}
+
+#compte-a-rebours p {
     margin: 0;
     font-size: clamp(1.5rem, 4vw, 2rem);
     letter-spacing: 0.5px;
-  }
-  
-  #compte-a-rebours #temps {
+}
+
+#compte-a-rebours #temps {
     color: var(--highlight-color);
-    font-weight: 700;
+    height: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     padding: 0 0.5rem;
-  }
-  
-  /* Grille des cartes d'actualités */
-  .actualites {
+}
+
+/* Grille des cartes d'actualités */
+.actualites {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2.5rem;
     padding: 2.5rem;
     max-width: 1400px;
     margin: 0 auto;
-  }
-  
-  article {
+}
+
+article {
     background-color: #ffffff;
     border-radius: 1.25rem;
     overflow: hidden;
-    transition: all var(--transition-speed);
+    transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-  }
-  
-  article:hover {
+}
+
+article:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  }
-  
-  article img {
+}
+
+article img {
     width: 100%;
     height: 240px;
     object-fit: cover;
-    transition: transform var(--transition-speed);
-  }
-  
-  article:hover img {
+    transition: transform 0.3s ease;
+}
+
+article:hover img {
     transform: scale(1.05);
-  }
-  
-  article .contenu {
+}
+
+article .contenu {
     padding: 2rem;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-  }
-  
-  /* Titres et textes */
-  h1 {
+}
+
+/* Titres et textes */
+.h1 {
     text-align: center;
     font-size: clamp(2.5rem, 5vw, 4rem);
     color: var(--accent-color);
     margin: 3rem 0;
-    font-weight: 800;
+    /* font-weight: 800; */
     letter-spacing: -0.5px;
     text-shadow: 2px 2px 4px rgba(230, 57, 70, 0.1);
-  }
-  
-  h2, h3 {
+}
+
+.h2, .h3 {
     color: var(--primary-color);
-    font-weight: 700;
+    /* font-weight: 700; */
     line-height: 1.3;
     margin-bottom: 1rem;
-  }
-  
-  h3 {
+}
+
+.h3 {
     font-size: 1.5rem;
-  }
-  
-  .date {
+}
+
+.date {
     font-size: 0.95rem;
     color: #666;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-  }
-  
-  .date::before {
+}
+
+.date::before {
     content: "📅";
     font-size: 1.1em;
-  }
-  
-  p {
+}
+
+.p {
     font-size: 1.05rem;
     margin-bottom: 1.5rem;
-  }
-  
-  /* Liens et boutons */
-  a {
+}
+
+/* Liens et boutons */
+.a {
     display: inline-flex;
     align-items: center;
     padding: 0.75rem 1.5rem;
-    color: white;
+    color: rgb(255, 0, 0);
     text-decoration: none;
     border-radius: 0.75rem;
-    font-weight: 600;
-    transition: all var(--transition-speed);
+    transition: all 0.3s ease;
     margin-top: auto;
     gap: 0.5rem;
-  }
-  
-  /* a:hover {
+}
+
+/* a:hover {
     background-color: #234173;
     transform: translateY(-2px);
-  } */
-  
-  /* Media Queries */
-  @media (max-width: 768px) {
+} */
+
+/* Media Queries */
+@media (max-width: 768px) {
     .actualites {
-      padding: 1.5rem;
-      gap: 1.5rem;
+        padding: 1.5rem;
+        gap: 1.5rem;
     }
-  
+
     .actualite-en-vedette img {
-      height: 300px;
+        height: 300px;
     }
-  
+
     #compte-a-rebours {
-      padding: 1rem 1.5rem;
+        padding: 1rem 1.5rem;
     }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     h1 {
-      margin: 2rem 0;
+        margin: 2rem 0;
     }
-  
+
     article {
-      border-radius: 1rem;
+        border-radius: 1rem;
     }
-  
+
     article img {
-      height: 200px;
+        height: 200px;
     }
-  
+
     .contenu {
-      padding: 1.5rem;
+        padding: 1.5rem;
     }
-  }
+}

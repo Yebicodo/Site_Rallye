@@ -2,7 +2,7 @@
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('img accueil/imgdaccueil.jpg') no-repeat center center/cover;
+    url('../Contenus/Image/imgdaccueil.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;

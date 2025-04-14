@@ -22,7 +22,7 @@ body {
 /* Navigation */
 nav {
     background-color: var(--secondary-color);
-    padding: 1rem;
+    padding: 1px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -99,7 +99,7 @@ nav {
         .nav-links a.active {
             background-color: transparent;
             color: var(--primary-color);
-            font-weight: bold;
+            /* font-weight: bold; */
             border: none;
         }
     

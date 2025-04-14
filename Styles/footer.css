@@ -3,30 +3,31 @@ footer {
     background-color: var(--secondary-color);
     color: white;
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+    padding: 10px; /* pas 1.5rem */
+    font-size: 10px;
 }
+
 
 .footer-icons {
     margin-top: 10px;
 }
 
 .footer-icons a {
-    margin: 0 10px;
+    margin: 0 5px; /* réduit */
     display: inline-block;
 }
 
 .footer-icons img {
-    width: auto; /* Laisser la largeur s'ajuster automatiquement */
-    height: auto; /* Laisser la hauteur s'ajuster automatiquement */
-    max-width: 100px; /* Valeur maximale pour la largeur */
-    max-height: 30px; /* Valeur maximale pour la hauteur */
-    transition: transform 0.3s ease; /* Ajoute une animation lors du survol */
+    width: 80px; /* fixe la taille */
+    height: 30px;
+    object-fit: contain; /* évite déformation */
+    transition: transform 0.3s ease;
 }
 
 .footer-icons img:hover {
-    transform: scale(1.2); /* Agrandit l'icône lors du survol */
+    transform: scale(1.2);
 }
+
 footer a {
     color: white;
     text-decoration: none;
@@ -36,15 +37,14 @@ footer a {
 footer a:hover {
     color: var(--primary-color);
 }
-html, body {
-    overflow-x: hidden;
-}
-
-
 
 /* Empêche les images de dépasser en responsive */
 img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+html, body {
+    overflow-x: hidden;
 }
