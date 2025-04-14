@@ -1,7 +1,8 @@
+<?php include 'includes/header.php'; ?>
 <?php 
 // Connexion à la base de données
-require_once 'config.php';  // Ce fichier contient l'objet $pdo
-include '../header.php';    // Header déjà inclus (doctype, html, head, etc.)
+require_once '../Configuration/Database/config.php';  // Ce fichier contient l'objet $pdo
+include 'Site\includes\header.php';    // Header déjà inclus (doctype, html, head, etc.)
 
 // Requête pour récupérer les actualités
 $sql = "SELECT * FROM actualites ORDER BY date_publication DESC";
@@ -32,4 +33,9 @@ $actualites = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <?php endforeach; ?>
 </section>
 
-<?php include '../footer.php'; ?>
+<?php include 'includes/footer.php'; ?>
+
+<!-- Script JS du site -->
+<script src="javascript/script.js"></script>
+</body>
+</html>

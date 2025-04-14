@@ -33,9 +33,9 @@
   </div>
 
   <ul class="nav-links">
-    <li><a href="../index.php">Accueil</a></li>
-    <li><a href="Site/galerie.php">Galerie</a></li>
-    <li><a href="../actualite.php">Actualités</a></li>
-    <li><a href="../contact.php">Contact</a></li>
+    <li><a href="index.php">Accueil</a></li>
+    <li><a href="galerie.php">Galerie</a></li>
+    <li><a href="actualite.php">Actualités</a></li>
+    <li><a href="contact.php">Contact</a></li>
   </ul>
 </nav>
