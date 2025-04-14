@@ -2,7 +2,6 @@
 <?php 
 // Connexion à la base de données
 require_once '../Configuration/Database/config.php';  // Ce fichier contient l'objet $pdo
-include 'Site\includes\header.php';    // Header déjà inclus (doctype, html, head, etc.)
 
 // Requête pour récupérer les actualités
 $sql = "SELECT * FROM actualites ORDER BY date_publication DESC";
