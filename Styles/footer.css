@@ -1,0 +1,50 @@
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.footer-icons {
+    margin-top: 10px;
+}
+
+.footer-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.footer-icons img {
+    width: auto; /* Laisser la largeur s'ajuster automatiquement */
+    height: auto; /* Laisser la hauteur s'ajuster automatiquement */
+    max-width: 100px; /* Valeur maximale pour la largeur */
+    max-height: 30px; /* Valeur maximale pour la hauteur */
+    transition: transform 0.3s ease; /* Ajoute une animation lors du survol */
+}
+
+.footer-icons img:hover {
+    transform: scale(1.2); /* Agrandit l'icône lors du survol */
+}
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+html, body {
+    overflow-x: hidden;
+}
+
+
+
+/* Empêche les images de dépasser en responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

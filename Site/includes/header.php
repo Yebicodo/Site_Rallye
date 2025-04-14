@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rallye Passion</title>
-  
-  <!-- Lien CSS (chemin absolu) -->
-  <link rel="stylesheet" href="/site_rallye/style.css">
-  
-  <!-- Lien Google Fonts -->
+
+  <!-- Liens CSS corrects depuis /includes/ (2 fois ../) -->
+  <link rel="stylesheet" href="../../Styles/header.css">
+  <link rel="stylesheet" href="../../Styles/index.css">
+  <link rel="stylesheet" href="../../Styles/footer.css">
+  <link rel="stylesheet" href="../../Styles/galerie.css">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
@@ -18,8 +21,8 @@
 <!-- Barre de navigation -->
 <nav>
   <div class="logo">
-    <a href="/site_rallye/index.html">
-      <img src="C:\wamp64\www\site_rallye\LOGO.png" alt="RallyePéÏ">
+    <a href="../index.php">
+      <img src="../../Contenus/Image/LOGO.png" alt="RallyePéÏ">
     </a>
   </div>
 
@@ -30,9 +33,9 @@
   </div>
 
   <ul class="nav-links">
-    <li><a href="/site_rallye/index.html">Accueil</a></li>
-    <li><a href="/site_rallye/galerie.html">Galerie</a></li>
-    <li><a href="/site_rallye/actualites/actualite.php">Actualités</a></li>
-    <li><a href="/site_rallye/contact.html">Contact</a></li>
+    <li><a href="../index.php">Accueil</a></li>
+    <li><a href="Site/galerie.php">Galerie</a></li>
+    <li><a href="../actualite.php">Actualités</a></li>
+    <li><a href="../contact.php">Contact</a></li>
   </ul>
 </nav>

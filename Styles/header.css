@@ -1,0 +1,166 @@
+/* Variables et Reset */
+:root {
+    --primary-color: #e63946;
+    --secondary-color: #1d3557;
+    --background-color: #f1faee;
+    --text-color: #2b2d42;
+    --accent-color: #457b9d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Righteous', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Navigation */
+nav {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    display: flex;
+    align-items: center;
+    height: 50px; /* Ajustez la hauteur de l'image selon vos besoins */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+
+/* Responsive Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .hamburger {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--secondary-color);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 1rem;
+        margin: 0;
+        border-top: 1px solid var(--primary-color);
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+        .nav-links a.active {
+            background-color: transparent;
+            color: var(--primary-color);
+            font-weight: bold;
+            border: none;
+        }
+    
+        .nav-links a {
+            padding: 1rem;
+            margin: 0;
+            border-top: none;
+        }
+    }
+
+    @media (max-width: 360px) {
+        /* Réduire la taille des titres */
+        h1 {
+            font-size: 2rem;
+        }
+    
+        h2 {
+            font-size: 1.5rem;
+        }
+    
+        h3 {
+            font-size: 1rem;
+        }
+    
+        p {
+            font-size: 0.9rem;
+        }
+    
+        /* Adapter les boutons */
+        .cta-button,
+        .btn-envoyer,
+        .btn-telechargement {
+            font-size: 0.9rem;
+            padding: 0.6rem 1.2rem;
+        }
+    
+        /* Réduire la bannière */
+        .banniere-titre {
+            height: 180px;
+            margin-top: 4rem;
+        }
+    
+        .banniere-titre h1 {
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+        }
+    
+        /* Réduire les images de galerie */
+        .gallery img:hover {
+            width: 100%; /* Éviter un zoom trop violent */
+        }
+    
+        /* Logo plus petit si besoin */
+        .logo img {
+            height: 40px;
+        }
+    
+        /* Espacer le menu pour ne pas surcharger */
+        .nav-links a {
+            padding: 0.8rem;
+            font-size: 0.9rem;
+        }
+    }
+    
