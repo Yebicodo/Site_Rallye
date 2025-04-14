@@ -9,12 +9,12 @@ $stmt = $pdo->query($sql);
 $actualites = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<!-- Actualité en vedette -->
+
 <section class="actualite-en-vedette">
     <img src="../Contenus/Image/Img_de_galerie (8).jpg" alt="Image à la une du Rallye">
 </section>
 
-<!-- Ton H1 maintenant EN DESSOUS de l'image -->
+
 <h1 class="titre-actualites">Actualités</h1>
 
 
@@ -47,7 +47,7 @@ $actualites = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <?php include 'includes/footer.php'; ?>
 
-<!-- Script JS du compte à rebours + nav -->
+
 <script src="javascript/script.js"></script>
 </body>
 </html>
