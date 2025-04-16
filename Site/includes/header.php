@@ -10,7 +10,10 @@
   <link rel="stylesheet" href="../../Styles/index.css">
   <link rel="stylesheet" href="../../Styles/footer.css">
   <link rel="stylesheet" href="../../Styles/galerie.css">
-  <link rel="stylesheet" href="../../Styles\actualite.css">
+  <link rel="stylesheet" href="../../Styles/actualite.css">
+  <link rel="stylesheet" href="../Site/contact.css">
+
+
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
