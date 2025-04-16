@@ -15,7 +15,7 @@
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 20px;
     margin-bottom: 1rem;
 }
 
@@ -99,13 +99,13 @@ a.carte:hover {
     display: block;
 }
 
-h3 {
-    font-size: 1.5rem;
+.h3 {
+    font-size: 10px;
     font-weight: bold;
     margin: 0.5rem 0 1rem;
 }
 
-p {
+.p {
     font-size: 20px;
     opacity: 0.8;
    

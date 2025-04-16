@@ -1,30 +1,18 @@
 
-
-/* Image vedette */
-.actualite-en-vedette {
-    width: 100vw; /* toute la largeur de l'écran */
-    height: 400px; /* fixe la hauteur de la bannière */
-    overflow: hidden;
-    position: relative;
+.fond-actualite {
+    background-image: url('../Contenus/Image/imgactu.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
-
-.actualite-en-vedette img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 🔥 remplissage sans déformation */
-    object-position: center; /* centré joliment */
-    display: block;
-}
-
-
 
 /* Titre de la page */
 .titre-actualites {
     text-align: center;
     font-size: clamp(2.5rem, 5vw, 4rem);
-    color: var(--accent-color); /* Garde ta couleur */
-    margin: 2rem 0 3rem 0;
-    /* font-weight: 800; */
+    color: white;
+    margin: 5rem 0 3rem 0;
     letter-spacing: -0.5px;
     text-shadow: 2px 2px 4px rgba(230, 57, 70, 0.1);
 }
@@ -64,16 +52,17 @@
     padding: 2.5rem;
     max-width: 1400px;
     margin: 0 auto;
+  
 }
 
 article {
-    background-color: #ffffff;
-    border-radius: 1.25rem;
+    background-color:#ffffff7a;
     overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
 }
 
 article:hover {
@@ -118,7 +107,7 @@ article .contenu {
 }
 
 .h3 {
-    font-size: 10px;
+    font-size: 5px;
 }
 
 .date {
@@ -132,12 +121,27 @@ article .contenu {
 
 .date::before {
     content: "📅";
-    font-size: 10px;
+    font-size: 20px;
 }
 
 .p {
     font-size: 10px;
     margin-bottom: 1.5rem;
+}
+
+.lien-pdf {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #23407350;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.lien-pdf:hover {
+    background-color: #1a305e;
 }
 
 /* Liens et boutons */

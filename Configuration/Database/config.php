@@ -9,6 +9,6 @@ $user = $env['DB_USER'];
 $pass = $env['DB_PASS'];
 
 // Connexion PDO
-$pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);6+
+$pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>

@@ -9,11 +9,8 @@ $stmt = $pdo->query($sql);
 $actualites = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<section class="actualite-en-vedette">
-    <img src="../Contenus/Image/Img_de_galerie (8).jpg" alt="Image à la une du Rallye">
-</section>
-
-<h1 class="titre-actualites">Actualités</h1>
+<div class="fond-actualite">
+    <h1 class="titre-actualites">L'Actualités</h1>
 
 <!-- Compte à rebours -->
 <div id="compte-a-rebours">
@@ -35,8 +32,8 @@ $actualites = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <p><?= nl2br(htmlspecialchars($actu['contenu'])) ?></p>
 
       <?php if (!empty($actu['pdf_url'])): ?>
-        <a href="../Contenus/PDF/<?= htmlspecialchars($actu['pdf_url']) ?>" target="_blank">📄 Télécharger le PDF</a>
-      <?php endif; ?>
+        <a class="lien-pdf" href="../Contenus/PDF/<?= htmlspecialchars($actu['pdf_url']) ?>" target="_blank">📄 Télécharger le PDF</a>
+  <?php endif; ?>
     </article>
   <?php endforeach; ?>
 </section>
