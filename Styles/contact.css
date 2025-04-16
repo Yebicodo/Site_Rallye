@@ -1,23 +1,33 @@
-/* Arrière-plan du formulaire */
 .background-image {
-  background-image: url('Page-de-fond-contact.jpg'); /* à placer dans Site/ */
+  background-image: url('../Contenus/Image/imgcontact.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 2rem;
+  padding: 5rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Bloc formulaire */
+
+/* 🧾 Formulaire */
 .formulaire-contact {
+  border-radius: 1rem;
+  padding: 3rem;
+  width: 100%;
   max-width: 600px;
-  margin: 8rem auto 2rem;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.14);
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  color: #fff;
+  animation: fadeIn 0.7s ease-in-out;
 }
 
-/* Groupes de champs */
+.formulaire-contact h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* 🎯 Champs */
 .groupe-formulaire {
   margin-bottom: 1.5rem;
 }
@@ -25,58 +35,91 @@
 .groupe-formulaire label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #333;
+  font-weight: bold;
+  color: #f1faee;
 }
 
 .groupe-formulaire input,
 .groupe-formulaire textarea {
   width: 100%;
-  padding: 0.8rem;
-  border: 1px solid rgba(221, 221, 221, 0);
-  background-color: rgba(255, 255, 255, 0.33);
-  border-radius: 4px;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
   font-size: 1rem;
+  background-color:rgb(255 255 255 / 41%)
+
 }
 
-/* Zone texte */
-.groupe-formulaire textarea {
-  height: 150px;
+.groupe-formulaire input:focus,
+.groupe-formulaire textarea:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 🧾 Zone de texte */
+textarea {
   resize: vertical;
+  min-height: 120px;
 }
 
-/* Bouton */
+/* ✅ Messages */
+.success,
+.errors {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.errors {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* 🚀 Bouton */
 .button-container {
   text-align: center;
 }
 
 .btn-envoyer {
-  background-color: rgba(230, 57, 70, 0.27);
+  background-color: #e63946;
   color: white;
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-envoyer:hover {
-  background-color: #c1121e6e;
+  background-color: #c1121f;
+  transform: scale(1.05);
 }
 
-/* Message succès et erreurs */
-.success {
-  text-align: center;
-  background-color: #d4edda;
-  padding: 10px;
-  color: #155724;
-  border-radius: 5px;
-  margin-bottom: 20px;
+/* 🔙 Retour accueil */
+.btn-retour {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.8rem;
+  background-color: #2a9d8f;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.errors {
-  background-color: #f8d7da;
-  padding: 10px;
-  color: #721c24;
-  border-radius: 5px;
-  margin-bottom: 20px;
+.btn-retour:hover {
+  background-color: #21867a;
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

@@ -3,7 +3,7 @@
 <main>
     <div class="titre-rallye">
         <div class="banniere-titre">
-            <h1>Les plus belles images de Rallye 2024</h1>
+            <h1>Les plus belles images du Rallye 2024</h1>
         </div>
           
         <div class="galerie">
