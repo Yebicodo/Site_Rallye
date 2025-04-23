@@ -11,6 +11,8 @@ $pass = $env['DB_PASS'];
 // SMTP (depuis le .env)
 define('SMTP_USER', $env['SMTP_USER']);
 define('SMTP_PASS', $env['SMTP_PASS']);
+define('CONTACT_RECEIVER', $env['CONTACT_RECEIVER']);
+
 
 // Connexion PDO
 $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);

@@ -1,5 +1,5 @@
 <?php
-// 🧩 Chargement des classes PHPMailer
+// Chargement des classes PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -10,14 +10,14 @@ require '../PHPMailer-master/PHPMailer-master/src/Exception.php';
 // 🔌 Chargement des infos de config (BDD + identifiants Gmail)
 require_once '../Configuration/Database/config.php';
 
-// 🔄 Initialisation des variables
+// Initialisation des variables
 $success = false;
 $errors = [];
 $name = '';
 $email = '';
 $message = '';
 
-// 📩 Traitement du formulaire
+// Traitement du formulaire
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   // ✨ Récupération des champs
   $name = trim($_POST["name"]);
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $message = trim($_POST["message"]);
   $honeypot = trim($_POST["website"]); // champ invisible (anti-bot)
 
-  // 🛡️ Si le champ caché est rempli → robot → on bloque
+  // 🛡️ Si le champ caché est rempli → robot → nous bloque
   if (!empty($honeypot)) exit;
 
   // ✅ Validation des champs
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   if (empty($errors)) {
     $mail = new PHPMailer(true);
     try {
-      // ✉️ Configuration SMTP (envoi via Gmail)
+      // Configuration SMTP (envoi via Gmail)
       $mail->isSMTP();
       $mail->Host = 'smtp.gmail.com';
       $mail->SMTPAuth = true;
@@ -46,9 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       $mail->SMTPSecure = 'tls';
       $mail->Port = 587;
 
-      // 📤 Infos du message
+      // Infos du message
       $mail->setFrom($email, $name);
-      $mail->addAddress('tonemail@gmail.com'); // ton adresse de réception
+      $mail->addAddress(CONTACT_RECEIVER); 
 
       $mail->isHTML(true);
       $mail->Subject = '📩 Nouveau message depuis le site RallyePéÏ';
@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <?php include 'includes/header.php'; ?>
 
-<!-- 🌄 Fond et formulaire -->
+<!-- Fond et formulaire -->
 <section class="background-image">
   <div class="formulaire-contact">
     <h2>Contactez-nous</h2>
@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       </ul>
     <?php endif; ?>
 
-    <!-- 📝 Formulaire de contact -->
+    <!-- Formulaire de contact -->
     <form method="post" action="contact.php" novalidate>
       <!-- champ caché anti-spam -->
       <input type="text" name="website" style="display:none">

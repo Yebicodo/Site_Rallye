@@ -4,7 +4,7 @@
 <header class="hero">
     <div class="hero-content">
         <h1>Bienvenue sur RallyePéÏ</h1>
-        <a href="#" class="cta-button">Découvrir</a>
+        <a href="../Site/galerie.php" class="cta-button">Découvrir</a>
     </div>
 </header>
 
