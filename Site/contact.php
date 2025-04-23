@@ -75,14 +75,16 @@ $honeypot = trim($_POST["website"]); // champ invisible (anti-bot)
             $mail->CharSet = 'UTF-8'; // Pour supporter les accents
 
             // 📤 Infos du message
-            $mail->setFrom($email, $name);
-            $mail->addAddress(CONTACT_RECEIVER);
+      $mail->setFrom(SMTP_USER, 'Formulaire RallyePéÏ');
+      $mail->addReplyTo($email, $name); // permet de répondre directement à l'utilisateur
+      $mail->addAddress(CONTACT_RECEIVER); // destinataire défini dans .env
 
-            $mail->isHTML(true);
-            $mail->Subject = '📩 Nouveau message depuis le site RallyePéÏ';
-            $mail->Body = "<b>Nom :</b> " . htmlspecialchars($name) .
-                          "<br><b>Email :</b> " . htmlspecialchars($email) .
-                          "<br><b>Message :</b><br>" . nl2br(htmlspecialchars($message));
+      $mail->isHTML(true);
+      $mail->Subject = '📩 Nouveau message depuis le site RallyePéÏ';
+      $mail->Body = "<b>Nom :</b> " . htmlspecialchars($name) .
+              "<br><b>Email :</b> " . htmlspecialchars($email) .
+              "<br><b>Message :</b><br>" . nl2br(htmlspecialchars($message));
+
 
             // 📨 Envoi du mail
             $mail->send();
