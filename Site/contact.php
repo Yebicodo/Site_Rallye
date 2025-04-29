@@ -32,20 +32,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit("Erreur de sécurité : token invalide");
     }
 
-  // ✨ Récupération et nettoyage des champs (version moderne)
-$name = htmlspecialchars(trim($_POST["name"]), ENT_QUOTES, 'UTF-8');
-$email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-$message = htmlspecialchars(trim($_POST["message"]), ENT_QUOTES, 'UTF-8');
-$honeypot = trim($_POST["website"]); // champ invisible (anti-bot)
-
-    // 🛡️ Si le champ caché est rempli → robot → on bloque
-    if (!empty($honeypot)) exit;
+    // ✨ Récupération et nettoyage des champs
+    $name = htmlspecialchars(trim($_POST["name"]), ENT_QUOTES, 'UTF-8');
+    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $message = htmlspecialchars(trim($_POST["message"]), ENT_QUOTES, 'UTF-8');
 
     // ✅ Validation des champs
     if (empty($name)) $errors[] = "Le nom est requis.";
     if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Email invalide.";
     if (empty($message)) $errors[] = "Le message est requis.";
-    
+
     // 📏 Validation de la longueur des champs
     if (strlen($name) > 100) $errors[] = "Le nom est trop long (max 100 caractères)";
     if (strlen($email) > 255) $errors[] = "Email trop long (max 255 caractères)";
@@ -63,8 +59,8 @@ $honeypot = trim($_POST["website"]); // champ invisible (anti-bot)
             $mail->Password = SMTP_PASS;
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
-            
-            // ⚙️ Options SMTP pour meilleure compatibilité
+
+            // ⚙️ Options SMTP et encodage
             $mail->SMTPOptions = [
                 'ssl' => [
                     'verify_peer' => false,
@@ -72,30 +68,29 @@ $honeypot = trim($_POST["website"]); // champ invisible (anti-bot)
                     'allow_self_signed' => true
                 ]
             ];
-            $mail->CharSet = 'UTF-8'; // Pour supporter les accents
+            $mail->CharSet = 'UTF-8';
 
             // 📤 Infos du message
-      $mail->setFrom(SMTP_USER, 'Formulaire RallyePéÏ');
-      $mail->addReplyTo($email, $name); // permet de répondre directement à l'utilisateur
-      $mail->addAddress(CONTACT_RECEIVER); // destinataire défini dans .env
+            $mail->setFrom(SMTP_USER, 'Formulaire RallyePéÏ');
+            $mail->addReplyTo($email, $name);
+            $mail->addAddress(CONTACT_RECEIVER);
 
-      $mail->isHTML(true);
-      $mail->Subject = '📩 Nouveau message depuis le site RallyePéÏ';
-      $mail->Body = "<b>Nom :</b> " . htmlspecialchars($name) .
-              "<br><b>Email :</b> " . htmlspecialchars($email) .
-              "<br><b>Message :</b><br>" . nl2br(htmlspecialchars($message));
-
+            $mail->isHTML(true);
+            $mail->Subject = '📩 Nouveau message depuis le site RallyePéÏ';
+            $mail->Body = "<b>Nom :</b> " . htmlspecialchars($name) .
+                          "<br><b>Email :</b> " . htmlspecialchars($email) .
+                          "<br><b>Message :</b><br>" . nl2br(htmlspecialchars($message));
 
             // 📨 Envoi du mail
             $mail->send();
             $success = true;
 
-            // 💾 Enregistrement dans la base de données (avec gestion silencieuse des erreurs)
+            // 💾 Enregistrement en base
             try {
                 $stmt = $pdo->prepare("INSERT INTO messages (nom, email, message) VALUES (?, ?, ?)");
                 $stmt->execute([$name, $email, $message]);
             } catch (PDOException $e) {
-                error_log("Erreur BDD: " . $e->getMessage()); // Log l'erreur sans l'afficher
+                error_log("Erreur BDD: " . $e->getMessage());
             }
 
             // 🔄 Régénération du token CSRF après utilisation
@@ -130,8 +125,6 @@ $honeypot = trim($_POST["website"]); // champ invisible (anti-bot)
 
     <!-- 📝 Formulaire de contact -->
     <form method="post" action="contact.php" novalidate>
-      <!-- 🛡️ Champ caché anti-spam -->
-      <input type="text" name="website" style="display:none">
       
       <!-- 🔐 Token CSRF (protection contre les attaques intersites) -->
       <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
