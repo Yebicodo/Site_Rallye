@@ -10,7 +10,7 @@ require '../PHPMailer-master/PHPMailer-master/src/PHPMailer.php';
 require '../PHPMailer-master/PHPMailer-master/src/SMTP.php';
 require '../PHPMailer-master/PHPMailer-master/src/Exception.php';
 
-// 🔌 Chargement des infos de config (BDD + identifiants Gmail)
+// 🔌 Chargement des infos de config (BDD + identifiants Gmail) + mp dans .env
 require_once '../Configuration/Database/config.php';
 
 // 🔄 Initialisation des variables
