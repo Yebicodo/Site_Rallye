@@ -51,7 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (empty($errors)) {
         $mail = new PHPMailer(true);
         try {
-            // ✉️ Configuration SMTP (envoi via Gmail)
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
@@ -60,7 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
 
-            // ⚙️ Options SMTP et encodage
             $mail->SMTPOptions = [
                 'ssl' => [
                     'verify_peer' => false,
@@ -70,7 +68,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             ];
             $mail->CharSet = 'UTF-8';
 
-            // 📤 Infos du message
             $mail->setFrom(SMTP_USER, 'Formulaire RallyePéÏ');
             $mail->addReplyTo($email, $name);
             $mail->addAddress(CONTACT_RECEIVER);
@@ -81,11 +78,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                           "<br><b>Email :</b> " . htmlspecialchars($email) .
                           "<br><b>Message :</b><br>" . nl2br(htmlspecialchars($message));
 
-            // 📨 Envoi du mail
             $mail->send();
             $success = true;
 
-            // 💾 Enregistrement en base
             try {
                 $stmt = $pdo->prepare("INSERT INTO messages (nom, email, message) VALUES (?, ?, ?)");
                 $stmt->execute([$name, $email, $message]);
@@ -93,7 +88,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 error_log("Erreur BDD: " . $e->getMessage());
             }
 
-            // 🔄 Régénération du token CSRF après utilisation
             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 
         } catch (Exception $e) {
@@ -125,8 +119,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <!-- 📝 Formulaire de contact -->
     <form method="post" action="contact.php" novalidate>
-      
-      <!-- 🔐 Token CSRF (protection contre les attaques intersites) -->
       <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
 
       <div class="groupe-formulaire">
@@ -155,6 +147,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <button class="btn-envoyer" type="submit">Envoyer</button>
       </div>
     </form>
+
+    <!-- 🔙 Bouton retour -->
+    <div class="button-container">
+      <a href="index.php" class="btn-retour">← Retour à l'accueil</a>
+    </div>
+
   </div>
 </section>
 
