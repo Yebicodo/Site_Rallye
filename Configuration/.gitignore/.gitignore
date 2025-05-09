@@ -1,2 +1,3 @@
 .env
-actualites/config.php
+/config.php
+Configuration/.env
