@@ -11,7 +11,8 @@ require '../PHPMailer-master/PHPMailer-master/src/SMTP.php';
 require '../PHPMailer-master/PHPMailer-master/src/Exception.php';
 
 // 🔌 Chargement des infos de config (BDD + identifiants Gmail) + mp dans .env
-require_once '../Configuration/Database/config.php';
+require_once __DIR__ . '/../config.php';
+
 
 // 🔄 Initialisation des variables
 $success = false;
