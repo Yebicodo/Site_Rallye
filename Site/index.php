@@ -52,7 +52,7 @@
     </div>
 </div>
 
-<div class="gallery">
+<!-- <div class="gallery">
     <img src="../Contenus/Image/diapo (1).jpg" alt="Diapo">
     <img src="../Contenus/Image/diapo (2).jpg" alt="Diapo">
     <img src="../Contenus/Image/diapo (3).jpg" alt="Diapo">
@@ -60,7 +60,7 @@
     <img src="../Contenus/Image/diapo (5).jpg" alt="Diapo">
     <img src="../Contenus/Image/diapo (6).jpg" alt="Diapo">
     <img src="../Contenus/Image/diapo (7).jpg" alt="Diapo">
-</div>
+</div> -->
 
 <section id="ma-section-video">
     <video controls loop>

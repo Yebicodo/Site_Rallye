@@ -1,166 +1,129 @@
-/* Variables et Reset */
+/* ===================== 🌐 Variables & Reset ===================== */
 :root {
-    --primary-color: #e63946;
-    --secondary-color: #1d3557;
-    --background-color: #f1faee;
-    --text-color: #2b2d42;
-    --accent-color: #457b9d;
+  --primary-color: #e63946;
+  --secondary-color: #1d3557;
+  --background-color: #f1faee;
+  --text-color: #2b2d42;
+  --accent-color: #457b9d;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: 'Righteous', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Navigation */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Righteous', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* ===================== 🧭 Navigation ===================== */
 nav {
-    background-color: var(--secondary-color);
-    padding: 1px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: var(--secondary-color);
+  padding: 0.5rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-    display: flex;
-    align-items: center;
-    height: 50px; /* Ajustez la hauteur de l'image selon vos besoins */
+  height: 50px;
 }
 
+/* --- Liens principaux --- */
 .nav-links {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    margin: 0 0.5rem;
-    transition: all 0.3s ease;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
 }
 
-.nav-links a:hover, .nav-links a.active {
-    background-color: var(--primary-color);
-    border-radius: 4px;
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: var(--primary-color);
+  border-radius: 4px;
 }
 
-
-/* Responsive Menu */
+/* ===================== 🍔 Menu hamburger ===================== */
 .menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .menu-toggle .hamburger {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
-    transition: all 0.3s ease;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
 }
+
+/* ===================== 📱 Responsive: ≤768px ===================== */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--secondary-color);
-        position: absolute;
-        top: 60px;
-        left: 0;
-        
-    }
+  .menu-toggle {
+    display: flex;
+  }
 
-    .nav-links.active {
-        display: flex;
-    }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0; /* ✅ colle au bord droit */
+    width: 100%;
+    background-color: var(--secondary-color);
+    text-align: center;
+  }
 
-    .nav-links a {
-        padding: 1rem;
-        margin: 0;
-        border-top: 1px solid var(--primary-color);
-    }
+  .nav-links.active {
+    display: flex;
+  }
 
-    .menu-toggle {
-        display: flex;
-    }
-        .nav-links a.active {
-            background-color: transparent;
-            color: var(--primary-color);
-            /* font-weight: bold; */
-            border: none;
-        }
-    
-        .nav-links a {
-            padding: 1rem;
-            margin: 0;
-            border-top: none;
-        }
-    }
+  .nav-links a {
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+    border: none;
+    background: none;
+    font-size: 1rem;
+  }
 
-    @media (max-width: 360px) {
-        /* Réduire la taille des titres */
-        h1 {
-            font-size: 2rem;
-        }
-    
-        h2 {
-            font-size: 1.5rem;
-        }
-    
-        h3 {
-            font-size: 1rem;
-        }
-    
-        p {
-            font-size: 0.9rem;
-        }
-    
-        /* Adapter les boutons */
-        .cta-button,
-        .btn-envoyer,
-        .btn-telechargement {
-            font-size: 0.9rem;
-            padding: 0.6rem 1.2rem;
-        }
-    
-        /* Réduire la bannière */
-        .banniere-titre {
-            height: 180px;
-            margin-top: 4rem;
-        }
-    
-        .banniere-titre h1 {
-            font-size: 1.5rem;
-            padding: 0.5rem 1rem;
-        }
-    
-        /* Réduire les images de galerie */
-        .gallery img:hover {
-            width: 100%; /* Éviter un zoom trop violent */
-        }
-    
-        /* Logo plus petit si besoin */
-        .logo img {
-            height: 40px;
-        }
-    
-        /* Espacer le menu pour ne pas surcharger */
-        .nav-links a {
-            padding: 0.8rem;
-            font-size: 0.9rem;
-        }
-    }
-    
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: none;
+    color: var(--primary-color);
+    border: none;
+  }
+}
+
+/* ===================== 📱 Extra responsive: ≤360px ===================== */
+@media (max-width: 360px) {
+  .logo img {
+    height: 40px;
+  }
+
+  .nav-links a {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}

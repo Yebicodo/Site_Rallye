@@ -1,10 +1,12 @@
-
 .fond-actualite {
     background-image: url('../Contenus/Image/imgactu.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+    /* ✅ Ajout pour compenser le menu fixe */
+    padding-top: 60px;
 }
 
 /* Titre de la page */
@@ -39,7 +41,6 @@
 
 #compte-a-rebours #temps {
     color: var(--highlight-color);
-    height: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     padding: 0 0.5rem;
 }
@@ -52,13 +53,11 @@
     padding: 2.5rem;
     max-width: 1400px;
     margin: 0 auto;
-
-    /** ✅ Ajoute cette ligne */
     justify-items: center;
 }
 
 article {
-    background-color:#ffffff7a;
+    background-color: #ffffff7a;
     overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -96,14 +95,12 @@ article .contenu {
     font-size: 10px;
     color: var(--accent-color);
     margin: 3rem 0;
-    /* font-weight: 800; */
     letter-spacing: -0.5px;
     text-shadow: 2px 2px 4px rgba(230, 57, 70, 0.1);
 }
 
 .h2, .h3 {
     color: var(--primary-color);
-    /* font-weight: 700; */
     line-height: 1.3;
     margin-bottom: 1rem;
 }
@@ -159,16 +156,12 @@ article .contenu {
     gap: 0.5rem;
 }
 
-/* a:hover {
-    background-color: #234173;
-    transform: translateY(-2px);
-} */
-
 /* Media Queries */
 @media (max-width: 768px) {
     .actualites {
         padding: 1.5rem;
         gap: 1.5rem;
+        grid-template-columns: 1fr;
     }
 
     .actualite-en-vedette img {
@@ -178,11 +171,6 @@ article .contenu {
     #compte-a-rebours {
         padding: 1rem 1.5rem;
     }
-    .actualites {
-    grid-template-columns: 1fr; /* Une seule colonne */
-    justify-items: center;      /* Centre les articles */
-}
-
 }
 
 @media (max-width: 480px) {
