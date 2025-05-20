@@ -52,7 +52,9 @@
     padding: 2.5rem;
     max-width: 1400px;
     margin: 0 auto;
-  
+
+    /** ✅ Ajoute cette ligne */
+    justify-items: center;
 }
 
 article {
@@ -176,6 +178,11 @@ article .contenu {
     #compte-a-rebours {
         padding: 1rem 1.5rem;
     }
+    .actualites {
+    grid-template-columns: 1fr; /* Une seule colonne */
+    justify-items: center;      /* Centre les articles */
+}
+
 }
 
 @media (max-width: 480px) {

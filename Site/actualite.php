@@ -1,7 +1,7 @@
 <?php include 'includes/header.php'; ?>
 <?php 
 // Connexion à la base de données
-require_once '../Configuration/Database/config.php'; 
+require_once __DIR__ . '/../config.php';
 
 // Requête pour récupérer les actualités
 $sql = "SELECT * FROM actualites ORDER BY date_publication DESC";
