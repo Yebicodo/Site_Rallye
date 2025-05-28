@@ -18,7 +18,7 @@
                 <h3>PERFORMANCES</h3>
                 <p>Des voitures exceptionnelles pour des courses palpitantes.</p>
             </div>
-            <img src="../Contenus/Image/img-grille.jpg" alt="Voiture de sport">
+            <img src="../Contenus/Image/diapo (6).jpg" alt="Voiture de sport">
         </a>
 
         <!-- Compétitions -->

@@ -160,6 +160,52 @@ p {
     max-width: 45%;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+    .grille {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .carte,
+    .carte-large {
+        grid-column: span 1;
+        height: auto;
+        padding: 1.5rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carte img,
+    .image-carte {
+        position: static;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        margin-top: 4rem;
+        border-radius: 10px;
+    }
+
+    .carte-large .contenu {
+        max-width: 100%;
+        z-index: auto;
+    }
+
+    .numéro {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
 
 /* Section Vidéo */
 #ma-section-video {
@@ -177,101 +223,3 @@ p {
     height: auto;
     border-radius: 8px;
 }
-@media (max-width: 768px) {
-  .grille {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1rem;
-  }
-
-  .carte,
-  .carte-large {
-    grid-column: span 1;
-    height: auto;
-    padding: 1.5rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative; /* 🔧 important pour éviter les conflits de superposition */
-  }
-
-  .carte img,
-  .image-carte,
-  .carte-large img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    position: static; /* 🔧 empêche l’image de remonter */
-    margin-top: 1rem;
-    border-radius: 10px;
-  }
-
-  .carte-large .contenu {
-    max-width: 100%;
-    text-align: center;
-    position: relative; /* 🔧 utile si img était en absolute avant */
-    z-index: 1;
-  }
-
-  .numéro {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .hero h1 {
-    font-size: 24px;
-  }
-
-  .cta-button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  .conteneur {
-    padding: 10px;
-  }
-
-  .carte,
-  .carte-large {
-    padding: 10px;
-  }
-
-  .carte img,
-  .image-carte,
-  .carte-large img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    position: static;
-    margin-top: 10px;
-    border-radius: 8px;
-  }
-
-  .carte-large .contenu {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .numéro {
-    font-size: 20px;
-  }
-
-  h3 {
-    font-size: 15px;
-  }
-
-  p {
-    font-size: 12px;
-  }
-}
-
